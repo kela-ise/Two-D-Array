@@ -1,4 +1,4 @@
-﻿namespace Two_D_Array_Game
+﻿namespace TwoDArrayGame
 {
    
  
