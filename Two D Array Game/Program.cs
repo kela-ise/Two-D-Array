@@ -22,7 +22,7 @@
                 {
                     playGround[i, j] = randomSymbols[random.Next(randomSymbols.Length)];
 
-                    Console.WriteLine(playGround[i, j]);
+                    Console.Write($"Index [{i}{j}]= {playGround[i , j]}      ");
                 }
                 Console.WriteLine();
             }
