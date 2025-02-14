@@ -1,7 +1,10 @@
-﻿namespace TwoDArrayGame
+﻿using System;
+using System.Drawing;
+using Console = Colorful.Console;
+
+namespace TwoDArraySolutions
 {
-  
-    internal class Program
+    internal class Programb
     {
         static void Main(string[] args)
         {
@@ -14,18 +17,18 @@
             int noOfColumns = Convert.ToInt32(Console.ReadLine());
             char[,] playGround = new char[numberOfRows, noOfColumns];// using char because of randomSymbols
             Console.WriteLine($"Your Array has {numberOfRows} rows & {noOfColumns} cols"); // 2d array
-
-            // iterate through rows & columns to assign & print random symbolsS 
+                                                                                           // iterate through rows & columns to assign & print random symbolsS 
             for (int rows = 0; rows < numberOfRows; rows++)
             {
                 for (int cols = 0; cols < noOfColumns; cols++)
                 {
                     playGround[rows, cols] = randomSymbols[random.Next(randomSymbols.Length)];
-                    Console.Write(playGround[rows, cols] + "  \t");
+                    Console.Write("X "+ playGround[rows, cols] + "  ", Color.Bisque);
                     //Console.Write($"Index [{i}*{j}]= {playGround[i , j]}      ");
 
                 }
                 Console.WriteLine();
+               // Console.WriteLine("O", Color.Pink);
             }
 
         }
