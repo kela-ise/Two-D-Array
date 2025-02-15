@@ -9,7 +9,7 @@ namespace TwoDArraySolutions
         static void Main(string[] args)
         {
             Random random = new Random();
-            char[] randomSymbols = { '%', '*', '+', '@', '&', '#', '$', '!', '?' };// characters that will be randomly placed in the grid/array
+            char[] randomSymbols = { '%', '&', '@', '#', '$' };// characters that will be randomly placed in the grid/array
             Console.WriteLine("2D Array");
             Console.Write("Enter # of Rows: ");
             int numberOfRows = Convert.ToInt32(Console.ReadLine());
@@ -17,20 +17,24 @@ namespace TwoDArraySolutions
             int noOfColumns = Convert.ToInt32(Console.ReadLine());
             char[,] playGround = new char[numberOfRows, noOfColumns];// using char because of randomSymbols
             Console.WriteLine($"Your Array has {numberOfRows} rows & {noOfColumns} cols"); // 2d array
-                                                                                           // iterate through rows & columns to assign & print random symbolsS 
-            for (int rows = 0; rows < numberOfRows; rows++)
+            Console.WriteLine("+----+----+----+----+", Color.Orange); //top border
+            for (int rows = 0; rows < numberOfRows; rows++) // iterate through rows & columns to assign & print random symbolsS 
             {
+               
+
                 for (int cols = 0; cols < noOfColumns; cols++)
                 {
+                    Console.Write("|", Color.Red); // left border
                     playGround[rows, cols] = randomSymbols[random.Next(randomSymbols.Length)];
-                    Console.Write("X "+ playGround[rows, cols] + "  ", Color.Bisque);
+                    //Console.Write(" 0 ", Color.Pink);
+                    Console.Write("  " + playGround[(rows), (cols)] + "  ", Color.Bisque);
                     //Console.Write($"Index [{i}*{j}]= {playGround[i , j]}      ");
 
                 }
-                Console.WriteLine();
-               // Console.WriteLine("O", Color.Pink);
+                Console.WriteLine("|", Color.Red); // right border
+                Console.WriteLine("+----+----+----+----+", Color.Orange); // bottom border
             }
-
+           
         }
     }
 }
