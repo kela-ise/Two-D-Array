@@ -8,6 +8,7 @@ namespace TwoDArraySolutions
     {
         static void Main(string[] args)
         {
+
             Random random = new Random();
             char[] randomSymbols = { '%', '&', '@', '#', '$' };// characters that will be randomly placed in the grid/array
             Console.WriteLine("2D Array");
@@ -17,13 +18,20 @@ namespace TwoDArraySolutions
             int noOfColumns = Convert.ToInt32(Console.ReadLine());
             char[,] playGround = new char[numberOfRows, noOfColumns];// using char because of randomSymbols
             Console.WriteLine($"Your Array has {numberOfRows} rows & {noOfColumns} cols"); // 2d array
-
-
+            string horizontalBorder = "+--+";
             Console.Write("Pick a display mode by entering 1 or 2:  ");
             int displayMode = Convert.ToInt32(Console.ReadLine());
+
+
             if (displayMode == 1)
             {
-                Console.WriteLine("+----+----+----+----+", Color.Orange); //top border
+                //top border
+                for (int i = 0; i < noOfColumns; i++) // use the column count to print the horizontalBorder
+                {
+                    Console.Write(horizontalBorder, Color.Orange);
+
+                }
+                Console.WriteLine("");
                 for (int rows = 0; rows < numberOfRows; rows++) // iterate through rows & columns to assign & print random symbolsS 
                 {
 
@@ -33,16 +41,23 @@ namespace TwoDArraySolutions
                         Console.Write("|", Color.Red); // left border
                         playGround[rows, cols] = randomSymbols[random.Next(randomSymbols.Length)];
                         //Console.Write(" 0 ", Color.Pink);
-                        Console.Write("  " + playGround[(rows), (cols)] + "  ", Color.Bisque);
+                        Console.Write(" " + playGround[(rows), (cols)] + " ", Color.Bisque);
                         //Console.Write($"Index [{i}*{j}]= {playGround[i , j]}      ");
 
                     }
                     Console.WriteLine("|", Color.Red); // right border
-                    Console.WriteLine("+----+----+----+----+", Color.Orange); // bottom border
+                    //Bottom border
+                    for (int i = 0; i < noOfColumns; i++)
+                    {
+                        Console.Write(horizontalBorder, Color.Orange);
+
+                    }
+                    Console.WriteLine("");
                 }
+
             }
 
-            else if (displayMode == 2)
+            else if (displayMode == 2) // 2nd display mode for the array
             {
                 for (int rows = 0; rows < numberOfRows; rows++) // iterate through rows & columns to assign & print random symbolsS 
                 {
@@ -58,6 +73,6 @@ namespace TwoDArraySolutions
                 }
             }
 
-            }
         }
     }
+}
