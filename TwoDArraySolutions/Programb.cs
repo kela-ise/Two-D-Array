@@ -8,10 +8,11 @@ namespace TwoDArraySolutions
     {
         static void Main(string[] args)
         {
-
+            const int DISPLAY_MODE_ONE = 1;
+            const int DISPLAY_MODE_TWO = 2;
+            Console.WriteLine("Two Dimentional Arrays", Color.Red);
             Random random = new Random();
             char[] randomSymbols = { '%', '&', '@', '#', '$' };// characters that will be randomly placed in the grid/array
-            Console.WriteLine("2D Array");
             Console.Write("Enter # of Rows: ");
             int numberOfRows = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter # of Cols: ");
@@ -23,7 +24,7 @@ namespace TwoDArraySolutions
             int displayMode = Convert.ToInt32(Console.ReadLine());
 
 
-            if (displayMode == 1)
+            if (displayMode == DISPLAY_MODE_ONE)
             {
                 //top border
                 for (int i = 0; i < noOfColumns; i++) // use the column count to print the horizontalBorder
@@ -57,7 +58,7 @@ namespace TwoDArraySolutions
 
             }
 
-            else if (displayMode == 2) // 2nd display mode for the array
+            else if (displayMode == DISPLAY_MODE_TWO) // 2nd display mode for the array
             {
                 for (int rows = 0; rows < numberOfRows; rows++) // iterate through rows & columns to assign & print random symbolsS 
                 {
@@ -72,7 +73,10 @@ namespace TwoDArraySolutions
                     Console.WriteLine("");
                 }
             }
-
+            else
+            {
+                Console.WriteLine("Invalid display mode, enter 1 or 2", Color.Red); // when display mode is not 1 or 2
+            }
         }
     }
 }
